@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+# Copyright 2018 Oinam Romesh Meitei. All Rights Reserved.
+# 
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+# 
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+import sys
+from molepy.coord.coord import Mole
+from molepy.scf.rhf import RHF
+from molepy.lib import mout
+from molepy.lib.mole_param import hfparam
+from molepy.lib.input import input_scan
+
+" A Simple script to run molepy (only HF at the present) "
+
+inp = sys.argv[1]
+outname = inp.split('.')[0]+'.log'
+
+cart_coord,basis = input_scan(inp)
+
+out = mout.molog()
+out.set_name(outname)
+Molecule = Mole(cart_coord)
+RHF(Molecule,basis)
+
