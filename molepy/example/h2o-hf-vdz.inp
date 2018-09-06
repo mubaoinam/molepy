@@ -1,0 +1,31 @@
+
+! An example input file to run with molepy/bin/molepy
+! 
+! The input file is structured as
+! 1.  'geometry' 'bohr'/'angstrom'
+!     this is the first line of the input,
+!     whatever that contains '!' is not read.
+!     if 'bohr'/'angstrom' is not provided,
+!     bohr unit is taken.
+! 2.  atomic coordinates (cartesian) should immediately 
+!     follow the first line without a break.
+! 3   an empty line is required after the geometry specification
+! 4.  hf, followed by the following keywords
+!     basis='basisname',
+!     energy=convergence criteria in energy, default 1e-7,
+!     density=convergence criteria in density matrix,
+!             default 1e-7
+!     seperate each keyword with a comma(,).
+! This is all you need to run molepy/bin/molepy
+! No need to provide name for output, its automatically
+! inputname.log
+
+
+
+geometry bohr
+    O   -0.317069806115    3.11002116482    0.205500963755
+    H    1.15917268226     2.08363883745    0.214906081107
+    H   -0.177295060282    4.17574360331   -1.21625722816 
+
+
+hf,basis=vdz,energy=1e-5,density=1e-5
