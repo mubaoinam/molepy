@@ -95,11 +95,11 @@ static int Index(int i, int j, int k, int l){
   return ij*(ij+1)/2+kl;
 }
 
-int factorial(int i){
+int factorial(int n){
   return (n>1) ? n*factorial(n-1) : 1;
 }
 
-int dfact(int i){
+int dfact(int n){
   return (n<=1) ? 1:n*dfact(n-2);
 }
 
