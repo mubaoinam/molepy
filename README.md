@@ -13,7 +13,7 @@ Molepy is a python based *ab initio* quantum chemistry program. Currently, the p
          cd molepy/ccmints
          mkdir build
          cd build
-         cmake ..
+         cmake ../src
          make
 * Include the top level directory in environmental variable "PYTHONPATH".
 
